@@ -9,12 +9,14 @@ class ClientAbstractCard extends StatelessWidget {
   final String name;
   final LevelEnum level;
   final String gymName;
+  final String imagePath;
 
   const ClientAbstractCard({
     Key? key,
     required this.name,
     required this.level,
     required this.gymName,
+    required this.imagePath,
   }) : super(key: key);
 
   @override
@@ -37,9 +39,7 @@ class ClientAbstractCard extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 5.h,
-              backgroundImage: const AssetImage(
-                AppImages.girlAvatarPng,
-              ),
+              backgroundImage: AssetImage(imagePath),
             ),
             SizedBox(width: 5.w),
             Expanded(
