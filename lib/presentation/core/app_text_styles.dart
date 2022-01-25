@@ -5,27 +5,27 @@ import 'package:vup/presentation/core/app_colors.dart';
 
 class AppTextStyles {
   static TextStyle hugeTitleStyle = GoogleFonts.balooBhaijaan(
-    fontSize: 36.sp,
+    fontSize: 34.sp,
     color: AppColors.white,
   );
 
   static TextStyle largeTitleStyle = GoogleFonts.balooBhaijaan(
-    fontSize: 24.sp,
+    fontSize: 22.sp,
     color: AppColors.white,
   );
 
-  static TextStyle regularLabelStyle = GoogleFonts.balooBhaijaan(
-    fontSize: 14.sp,
-    color: AppColors.white,
-  );
-
-  static TextStyle smallLabelStyle = GoogleFonts.balooBhaijaan(
+  static TextStyle regularLabelStyle = GoogleFonts.raleway(
     fontSize: 12.sp,
     color: AppColors.white,
   );
 
-  static TextStyle smallTitleStyle = GoogleFonts.balooBhaijaan(
-    fontSize: 18.sp,
+  static TextStyle smallLabelStyle = GoogleFonts.balooBhaijaan(
+    fontSize: 10.sp,
     color: AppColors.white,
+  );
+
+  static TextStyle smallTitleStyle = GoogleFonts.raleway(
+    fontSize: 16.sp,
+    color: AppColors.white, 
   );
 }
