@@ -10,7 +10,7 @@ class AppTextStyles {
   );
 
   static TextStyle largeTitleStyle = GoogleFonts.balooBhaijaan(
-    fontSize: 22.sp,
+    fontSize: 20.sp,
     color: AppColors.white,
   );
 
@@ -24,8 +24,18 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
-  static TextStyle smallTitleStyle = GoogleFonts.raleway(
-    fontSize: 16.sp,
-    color: AppColors.white, 
+  static TextStyle smallThinLabelStyle = GoogleFonts.raleway(
+    fontSize: 10.sp,
+    color: AppColors.white,
+  );
+
+  static TextStyle smallThinTitleStyle = GoogleFonts.raleway(
+    fontSize: 14.sp,
+    color: AppColors.white,
+  );
+
+  static TextStyle smallBoldTitleStyle = GoogleFonts.balooBhaijaan(
+    fontSize: 14.sp,
+    color: AppColors.white,
   );
 }

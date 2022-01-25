@@ -1,5 +1,9 @@
 class AppImages {
+  // PNG Files
   static const String logoPng = "assets/images/png/logo.png";
+  static const String girlAvatarPng = "assets/images/png/girl-avatar.png";
+
+  // SVG Files
   static const String addIcon = "assets/images/svg/add.svg";
   static const String groupIcon = "assets/images/svg/group.svg";
   static const String haltersIcon = "assets/images/svg/halters.svg";
