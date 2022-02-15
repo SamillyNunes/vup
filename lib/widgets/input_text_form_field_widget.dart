@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:vup/presentation/core/app_colors.dart';
 
-class InputTextBoxComponent extends StatelessWidget {
+class InputTextFormFieldWidget extends StatelessWidget {
   final String labelText;
-  const InputTextBoxComponent({
+  const InputTextFormFieldWidget({
     Key? key,
     required this.labelText,
   }) : super(key: key);
@@ -12,7 +12,9 @@ class InputTextBoxComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: const TextStyle(color: AppColors.white),
+      style: const TextStyle(
+        color: AppColors.white,
+      ),
       decoration: InputDecoration(
         focusColor: Colors.white,
         border: const OutlineInputBorder(),

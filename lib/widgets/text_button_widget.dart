@@ -14,13 +14,15 @@ class TextButtonComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: function,
-        child: Text(
-          text,
-          style: const TextStyle(
-              color: AppColors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 15),
-        ));
+      onPressed: function,
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: AppColors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+        ),
+      ),
+    );
   }
 }

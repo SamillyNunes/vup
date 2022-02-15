@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vup/presentation/core/app_colors.dart';
 
 import '../../../widgets/input_text_form_field_widget.dart';
 import '../../../widgets/text_button_widget.dart';
-import '../sign_up/sign_up_view.dart';
+import '../../core/app_colors.dart';
 
-class AuthView extends StatelessWidget {
-  const AuthView({Key? key}) : super(key: key);
+class SignUpView extends StatelessWidget {
+  const SignUpView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class AuthView extends StatelessWidget {
                   Image.asset('assets/images/png/logo.png', height: 50),
                   const Divider(color: Colors.transparent),
                   const Text(
-                    'Login',
+                    'Cadastro',
                     style: TextStyle(
                       color: AppColors.white,
                       fontWeight: FontWeight.bold,
@@ -54,14 +53,10 @@ class AuthView extends StatelessWidget {
                   const Divider(color: Colors.transparent),
                   const InputTextFormFieldWidget(labelText: 'Senha'),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButtonComponent(
                         text: 'Entrar com Google',
-                        function: () {},
-                      ),
-                      TextButtonComponent(
-                        text: 'Esqueceu sua senha?',
                         function: () {},
                       ),
                     ],
@@ -79,7 +74,7 @@ class AuthView extends StatelessWidget {
                     child: TextButton(
                       onPressed: () {},
                       child: const Text(
-                        'Entrar',
+                        'Cadastrar',
                         style: TextStyle(
                           color: AppColors.purpleMain,
                           fontWeight: FontWeight.bold,
@@ -90,11 +85,7 @@ class AuthView extends StatelessWidget {
                   ),
                   TextButtonComponent(
                     text: 'Não tem conta? Cadastre-se!',
-                    function: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: ((context) => const SignUpView()),
-                      ),
-                    ),
+                    function: () {},
                   ),
                 ],
               ),
