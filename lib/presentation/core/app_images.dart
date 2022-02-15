@@ -15,4 +15,5 @@ class AppImages {
   static const String logoIcon = "assets/images/svg/logo.svg";
   static const String settingsIcon = "assets/images/svg/settings.svg";
   static const String walletIcon = "assets/images/svg/wallet.svg";
+  static const String checkIcon = "assets/images/svg/check2.svg";
 }
