@@ -13,7 +13,7 @@ class MainPagesView extends StatefulWidget {
 }
 
 class _MainPagesViewState extends State<MainPagesView> {
-  final mainPagesViewModel = MainPagesViewModel();
+  final MainPagesViewModel mainPagesViewModel = MainPagesViewModel();
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,14 @@ class _MainPagesViewState extends State<MainPagesView> {
         onAddTapped: () {},
         context: context,
       ),
-      bottomNavigationBar: const BottomMenu(),
+      bottomNavigationBar: BottomMenu(mainPagesViewModel: mainPagesViewModel),
       body: PageView(
         controller: mainPagesViewModel.pagesViewController,
-        children: const [
-          HomeView(),
+        children: [
+          const HomeView(),
+          Container(color: Colors.red),
+          Container(color: Colors.green),
+          Container(color: Colors.yellow),
         ],
       ),
     );
