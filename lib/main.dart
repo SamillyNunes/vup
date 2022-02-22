@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'app_widget.dart';
+import 'package:vup/presentation/core/app_widget.dart';
 
 void main() {
   runApp(const AppWidget());
