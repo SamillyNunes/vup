@@ -11,13 +11,19 @@ class InputTextFormFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var outlineInputBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: const BorderSide(color: AppColors.white),
+    );
+
     return TextFormField(
       style: const TextStyle(
         color: AppColors.white,
       ),
       decoration: InputDecoration(
         focusColor: Colors.white,
-        border: const OutlineInputBorder(),
+        border: outlineInputBorder,
+        enabledBorder: outlineInputBorder,
         labelText: labelText,
         labelStyle: const TextStyle(
           color: AppColors.white,

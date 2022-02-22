@@ -4,17 +4,17 @@ import 'package:vup/presentation/core/app_colors.dart';
 
 class TextButtonComponent extends StatelessWidget {
   final String text;
-  final VoidCallback function;
+  final VoidCallback onTapped;
   const TextButtonComponent({
     Key? key,
     required this.text,
-    required this.function,
+    required this.onTapped,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: function,
+      onPressed: onTapped,
       child: Text(
         text,
         style: const TextStyle(
