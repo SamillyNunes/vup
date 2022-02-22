@@ -13,3 +13,15 @@ extension ParseToString on LevelEnum {
     return ptLabel;
   }
 }
+
+extension ParseFromString on String {
+  LevelEnum fromShortString() {
+    if (this == "fácil") {
+      return LevelEnum.easy;
+    } else if (this == "intermediário") {
+      return LevelEnum.intermediary;
+    } else {
+      return LevelEnum.hard;
+    }
+  }
+}
