@@ -3,10 +3,36 @@ import 'package:sizer/sizer.dart';
 import 'package:vup/local_database.dart';
 import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
-import 'package:vup/presentation/views/exercises/widgets/exercise_card.dart';
+import 'package:vup/presentation/views/exercises/widgets/abstract_exercise_card.dart';
+import 'package:vup/presentation/views/exercises/widgets/gain_weight_card.dart';
+import 'package:vup/presentation/views/exercises/widgets/low_weight_card.dart';
 
 class ExercisesView extends StatelessWidget {
   const ExercisesView({Key? key}) : super(key: key);
+
+  Widget buildLowExercises() {
+    List<Widget> lowExercises = LocalDatabase.lowExercises
+        .map((e) => LowWeightCard(e).create())
+        .toList();
+
+    return ListView(
+      children: lowExercises,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+    );
+  }
+
+  Widget buildGainExercises() {
+    List<Widget> gainExercises = LocalDatabase.lowExercises
+        .map((e) => GainWeightCard(e).create())
+        .toList();
+
+    return ListView(
+      children: gainExercises,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +51,8 @@ class ExercisesView extends StatelessWidget {
                 color: AppColors.purpleMain,
               ),
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: LocalDatabase.exercises.length,
-              itemBuilder: (ctx, index) => ExerciseCard(
-                exerciseModel: LocalDatabase.exercises[index],
-              ),
-            ),
+            buildLowExercises(),
+            buildGainExercises(),
           ],
         ),
       ),

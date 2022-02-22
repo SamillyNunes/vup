@@ -1,32 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
 import 'package:vup/presentation/views/exercises/models/exercise_model.dart';
 import 'package:vup/presentation/views/home/models/level_enum.dart';
 
-class ExerciseCard extends StatelessWidget {
+abstract class AbstractExerciseCard {
   final ExerciseModel exerciseModel;
-  const ExerciseCard({Key? key, required this.exerciseModel}) : super(key: key);
+  const AbstractExerciseCard({required this.exerciseModel});
 
-  @override
-  Widget build(BuildContext context) {
+  Widget create() {
     final LevelEnum level = exerciseModel.level;
 
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 2.h,
       ),
-      child: Container(
-        height: 15.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.purplew300,
-        ),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 2,
-          vertical: 2,
-        ),
+      child: build(
         child: Row(
           children: [
             Expanded(
@@ -72,4 +61,6 @@ class ExerciseCard extends StatelessWidget {
       ),
     );
   }
+
+  Widget build({required Widget child});
 }
