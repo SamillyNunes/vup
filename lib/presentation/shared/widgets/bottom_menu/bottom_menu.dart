@@ -55,7 +55,7 @@ class BottomMenu extends StatelessWidget {
                     isActive: index == 1,
                   ),
                   BottomMenuButton(
-                    name: "Carteira",
+                    name: "Pagamentos",
                     icon: AppImages.walletIcon,
                     onTapped: () => jumpToPage(2),
                     isActive: index == 2,

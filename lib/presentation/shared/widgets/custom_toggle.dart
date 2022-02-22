@@ -16,22 +16,25 @@ class CustomToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 6.w,
-      height: 6.w,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        border: Border.all(
-          color: AppColors.white,
+    return InkWell(
+      onTap: onTapped,
+      child: Container(
+        width: 6.w,
+        height: 6.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(
+            color: AppColors.white,
+          ),
         ),
+        padding: const EdgeInsets.all(3),
+        child: isEnabled
+            ? SvgPicture.asset(
+                AppImages.checkIcon,
+                color: AppColors.white,
+              )
+            : Container(),
       ),
-      padding: const EdgeInsets.all(3),
-      child: isEnabled
-          ? SvgPicture.asset(
-              AppImages.checkIcon,
-              color: AppColors.white,
-            )
-          : Container(),
     );
   }
 }

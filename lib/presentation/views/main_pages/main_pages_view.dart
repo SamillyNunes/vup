@@ -3,7 +3,7 @@ import 'package:vup/presentation/shared/widgets/bottom_menu/bottom_menu.dart';
 import 'package:vup/presentation/shared/widgets/custom_app_bar.dart';
 import 'package:vup/presentation/views/exercises/exercises_view.dart';
 import 'package:vup/presentation/views/home/home_view.dart';
-import 'package:vup/presentation/views/payments/wallet_view.dart';
+import 'package:vup/presentation/views/payments/payments_view.dart';
 
 import 'main_pages_view_model.dart';
 
@@ -32,7 +32,7 @@ class _MainPagesViewState extends State<MainPagesView> {
         children: [
           const HomeView(),
           const ExercisesView(),
-          const WalletView(),
+          const PaymentsView(),
           Container(color: Colors.yellow),
         ],
       ),
