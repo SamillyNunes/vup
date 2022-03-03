@@ -4,6 +4,7 @@ import 'package:vup/local_database_customers.dart';
 import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
 import 'package:vup/presentation/views/auth/auth_view.dart';
+import 'package:vup/presentation/views/result_info/result_info_view.dart';
 import 'package:vup/presentation/views/schedule_class/domain_service/scheduling_service.dart';
 import 'package:vup/presentation/views/schedule_class/models/scheduling_class_model.dart';
 
@@ -94,9 +95,6 @@ class _ScheduleClassViewState extends State<ScheduleClassView> {
                       timePicked?.hour ?? 1,
                       timePicked?.minute ?? 1,
                     );
-
-                    print(
-                        "Scheduling date and time: ${schedulingClassModel.scheduleDate}");
                   });
                 },
                 title: timePicked != null
@@ -182,7 +180,17 @@ class _ScheduleClassViewState extends State<ScheduleClassView> {
                     },
                   );
 
-                  print("Resultado: ${schedulingClassResult?.message}");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => ResultInfoView(
+                        resultMessage: schedulingClassResult!.message,
+                        icon: schedulingClassResult.finalResult
+                            ? Icons.check
+                            : Icons.error_outline,
+                      ),
+                    ),
+                  );
                 },
               ),
             ],
