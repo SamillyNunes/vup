@@ -2,14 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
+import 'package:vup/presentation/views/schedule_class/models/scheduling_class_model.dart';
 
 /// Widget de aula/treino agendado
 class ScheduledClass extends StatelessWidget {
   final bool isFirstWidget;
-  const ScheduledClass({
+  final SchedulingClassModel schedulingClassModel;
+  ScheduledClass({
     Key? key,
     this.isFirstWidget = false,
+    required this.schedulingClassModel,
   }) : super(key: key);
+
+  final List<String> months = [
+    'jan',
+    'fev',
+    'mar',
+    'abr',
+    'mai',
+    'jun',
+    'jul',
+    'ago',
+    'set',
+    'out',
+    'nov',
+    'dez'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +63,11 @@ class ScheduledClass extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "20",
+                      schedulingClassModel.scheduleDate.day.toString(),
                       style: AppTextStyles.smallBoldTitleStyle,
                     ),
                     Text(
-                      "mar",
+                      months[schedulingClassModel.scheduleDate.month - 1],
                       style: AppTextStyles.smallThinLabelStyle,
                     ),
                   ],
@@ -64,20 +82,20 @@ class ScheduledClass extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Abdômem e gluteos",
+                    schedulingClassModel.exerciseTypeDescription,
                     style: AppTextStyles.smallBoldTitleStyle,
                   ),
                   Text(
-                    "Academia Acquafit",
+                    "Academia ${schedulingClassModel.gym}",
                     style: AppTextStyles.smallThinLabelStyle,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "10:30 am",
+                    "${schedulingClassModel.scheduleDate.hour}:${schedulingClassModel.scheduleDate.minute} am",
                     style: AppTextStyles.smallThinLabelStyle,
                   ),
                   Text(
-                    "Prof. Fernando",
+                    "Prof. ${schedulingClassModel.teacher}",
                     style: AppTextStyles.smallThinLabelStyle,
                   ),
                 ],

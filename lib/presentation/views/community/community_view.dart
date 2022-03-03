@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:vup/local_database_customers.dart';
 import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
 
@@ -29,14 +30,15 @@ class CommunityView extends StatelessWidget {
             SizedBox(height: 2.h),
             SizedBox(
               height: 17.h,
-              child: ListView(
+              child: ListView.builder(
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.horizontal,
-                children: const [
-                  ScheduledClass(isFirstWidget: true),
-                  ScheduledClass(),
-                  ScheduledClass(),
-                ],
+                itemCount: LocalDatabaseCustomers.scheduledClasses.length,
+                itemBuilder: (context, index) => ScheduledClass(
+                  isFirstWidget: index == 0,
+                  schedulingClassModel:
+                      LocalDatabaseCustomers.scheduledClasses[index],
+                ),
               ),
             ),
           ],

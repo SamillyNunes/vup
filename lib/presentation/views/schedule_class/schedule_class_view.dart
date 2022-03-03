@@ -22,6 +22,7 @@ class _ScheduleClassViewState extends State<ScheduleClassView> {
   TimeOfDay? timePicked;
   String gymSelected = LocalDatabaseCustomers.availableGyms[0];
   String teacherSelected = LocalDatabaseCustomers.teachers[0];
+  String exerciseSelected = LocalDatabaseCustomers.exerciseTypes[0];
 
   SchedulingClassModel schedulingClassModel = SchedulingClassModel(
     exerciseTypeDescription: '',
@@ -46,6 +47,38 @@ class _ScheduleClassViewState extends State<ScheduleClassView> {
                 style: AppTextStyles.largeTitleStyle.copyWith(
                   color: AppColors.purplew200,
                 ),
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Tipo de exercício: ",
+                    style: AppTextStyles.regularLabelStyle
+                        .copyWith(color: AppColors.purpleMain),
+                  ),
+                  DropdownButton<String>(
+                    value: exerciseSelected,
+                    onChanged: (v) {
+                      setState(() {
+                        exerciseSelected =
+                            v ?? LocalDatabaseCustomers.exerciseTypes[0];
+                        schedulingClassModel.exerciseTypeDescription =
+                            exerciseSelected;
+                      });
+                    },
+                    items: LocalDatabaseCustomers.exerciseTypes
+                        .map(
+                          (exercise) => DropdownMenuItem<String>(
+                            child: Text(
+                              exercise,
+                              style: AppTextStyles.regularLabelStyle
+                                  .copyWith(color: AppColors.purpleMain),
+                            ),
+                            value: exercise,
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ],
               ),
               ListTile(
                 leading: const Icon(
@@ -179,6 +212,14 @@ class _ScheduleClassViewState extends State<ScheduleClassView> {
                       'gym-hours': LocalDatabaseCustomers.gymHours[gymSelected],
                     },
                   );
+
+                  setState(() {
+                    bool result = schedulingClassResult?.finalResult ?? false;
+                    if (result) {
+                      LocalDatabaseCustomers.scheduledClasses
+                          .add(schedulingClassModel);
+                    }
+                  });
 
                   Navigator.push(
                     context,

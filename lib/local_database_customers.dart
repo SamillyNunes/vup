@@ -1,3 +1,5 @@
+import 'package:vup/presentation/views/schedule_class/models/scheduling_class_model.dart';
+
 import 'presentation/views/home/models/simple_exercise_model.dart';
 
 class LocalDatabaseCustomers {
@@ -75,4 +77,13 @@ class LocalDatabaseCustomers {
     "Top",
     "Academia 10",
   ];
+
+  static final List<String> exerciseTypes = [
+    "Abdômem",
+    "Glúteos",
+    "Inferior",
+    "Superior"
+  ];
+
+  static List<SchedulingClassModel> scheduledClasses = [];
 }
