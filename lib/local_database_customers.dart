@@ -1,6 +1,6 @@
 import 'presentation/views/home/models/simple_exercise_model.dart';
 
-class LocalDatabase {
+class LocalDatabaseCustomers {
   static final List<SimpleExerciseModel> exercises = [
     SimpleExerciseModel(
       imageUrl: 'assets/images/jpg/halter.jpg',

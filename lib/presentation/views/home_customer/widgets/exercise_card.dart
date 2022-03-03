@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vup_client/presentation/views/exercise/exercise_view.dart';
 
 class ExerciseCard extends StatelessWidget {
   final String imageUrl;

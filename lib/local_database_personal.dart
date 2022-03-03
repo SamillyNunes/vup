@@ -4,7 +4,7 @@ import 'package:vup/presentation/views/exercises/models/low_weight_exercise_mode
 import 'package:vup/presentation/views/home/models/level_enum.dart';
 import 'package:vup/presentation/views/payments/models/customer_model.dart';
 
-class LocalDatabase {
+class LocalDatabasePersonal {
   static final List<LowWeightExerciseModel> lowExercises = [
     LowWeightExerciseModel(
       title: "Prancha",

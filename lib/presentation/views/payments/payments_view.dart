@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vup/local_database_clients.dart';
+import 'package:vup/local_database_personal.dart';
 import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
 import 'package:vup/presentation/views/payments/widgets/customer_list_tile.dart';
@@ -28,9 +28,9 @@ class PaymentsView extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: LocalDatabase.customers.length,
+              itemCount: LocalDatabasePersonal.customers.length,
               itemBuilder: (context, index) => CustomerListTile(
-                customerModel: LocalDatabase.customers[index],
+                customerModel: LocalDatabasePersonal.customers[index],
                 customerIndex: index,
               ),
             ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vup_client/presentation/core/app_colors.dart';
-import 'package:vup_client/presentation/core/app_text_styles.dart';
-import 'package:vup_client/presentation/local_database_exercise.dart';
-import 'package:vup_client/presentation/views/exercise/exercise_view.dart';
-import 'package:vup_client/presentation/views/home/widgets/exercise_card.dart';
-import 'package:vup_client/presentation/views/pay_debt/pay_debt_view.dart';
+import 'package:vup/local_database_customers.dart';
+import 'package:vup/presentation/core/app_colors.dart';
+import 'package:vup/presentation/core/app_text_styles.dart';
+import 'package:vup/presentation/views/exercise/exercise_view.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+import 'widgets/exercise_card.dart';
+
+class HomeCustomerView extends StatelessWidget {
+  const HomeCustomerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,15 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 100.h,
               child: ListView.builder(
-                itemCount: LocalDatabase.exercises.length,
+                itemCount: LocalDatabaseCustomers.exercises.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     child: ExerciseCard(
-                      imageUrl: LocalDatabase.exercises[index].imageUrl,
-                      name: LocalDatabase.exercises[index].name,
-                      frequency: LocalDatabase.exercises[index].frequency,
+                      imageUrl:
+                          LocalDatabaseCustomers.exercises[index].imageUrl,
+                      name: LocalDatabaseCustomers.exercises[index].name,
+                      frequency:
+                          LocalDatabaseCustomers.exercises[index].frequency,
                     ),
                     onTap: () {
                       Navigator.push(
