@@ -7,6 +7,7 @@ import 'package:vup/presentation/views/exercises/exercises_view.dart';
 import 'package:vup/presentation/views/home/home_view.dart';
 import 'package:vup/presentation/views/home_customer/home_customer_view.dart';
 import 'package:vup/presentation/views/payments/payments_view.dart';
+import 'package:vup/presentation/views/schedule_class/schedule_class_view.dart';
 import 'package:vup/presentation/views/setting/setting_view.dart';
 
 import 'main_pages_view_model.dart';
@@ -28,7 +29,14 @@ class _MainPagesViewState extends State<MainPagesView> {
       appBar: CustomAppBar(
         label: "16 de janeiro de 2022",
         onAddTapped: () {
-          if (widget.isPersonal) {}
+          if (widget.isPersonal) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (ctx) => const ScheduleClassView(),
+              ),
+            );
+          }
         },
         context: context,
       ),
