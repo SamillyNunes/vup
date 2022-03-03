@@ -9,9 +9,15 @@ import 'package:vup/presentation/views/main_pages/main_pages_view.dart';
 import '../sign_up/sign_up_view.dart';
 import 'widgets/input_text_form_field_widget.dart';
 
-class AuthView extends StatelessWidget {
+class AuthView extends StatefulWidget {
   const AuthView({Key? key}) : super(key: key);
 
+  @override
+  State<AuthView> createState() => _AuthViewState();
+}
+
+class _AuthViewState extends State<AuthView> {
+  bool _checkboxListTile = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +60,19 @@ class AuthView extends StatelessWidget {
                   const InputTextFormFieldWidget(labelText: 'Email'),
                   const Divider(color: Colors.transparent),
                   const InputTextFormFieldWidget(labelText: 'Senha'),
+                  CheckboxListTile(
+                    controlAffinity: ListTileControlAffinity.leading,
+                    title: const Text(
+                      'Você é personal?',
+                      style: TextStyle(color: AppColors.white),
+                    ),
+                    value: _checkboxListTile,
+                    onChanged: (value) {
+                      setState(() {
+                        _checkboxListTile = !_checkboxListTile;
+                      });
+                    },
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vup/local_database.dart';
+import 'package:vup/local_database_clients.dart';
 import 'package:vup/presentation/core/app_colors.dart';
-import 'package:vup/presentation/core/app_images.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
-import 'package:vup/presentation/shared/widgets/custom_toggle.dart';
 import 'package:vup/presentation/views/payments/widgets/customer_list_tile.dart';
 
 class PaymentsView extends StatelessWidget {
