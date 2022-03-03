@@ -27,7 +27,9 @@ class _MainPagesViewState extends State<MainPagesView> {
     return Scaffold(
       appBar: CustomAppBar(
         label: "16 de janeiro de 2022",
-        onAddTapped: () {},
+        onAddTapped: () {
+          if (widget.isPersonal) {}
+        },
         context: context,
       ),
       bottomNavigationBar: BottomMenu(
