@@ -7,5 +7,6 @@ void main() {
     DevicePreview(
       builder: (context) => const AppWidget(),
     ),
+    // const AppWidget(),
   );
 }

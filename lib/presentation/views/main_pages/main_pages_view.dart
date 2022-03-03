@@ -8,7 +8,8 @@ import 'package:vup/presentation/views/payments/payments_view.dart';
 import 'main_pages_view_model.dart';
 
 class MainPagesView extends StatefulWidget {
-  const MainPagesView({Key? key}) : super(key: key);
+  final bool isPersonal;
+  const MainPagesView({Key? key, required this.isPersonal}) : super(key: key);
 
   @override
   _MainPagesViewState createState() => _MainPagesViewState();

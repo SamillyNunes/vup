@@ -17,7 +17,7 @@ class AuthView extends StatefulWidget {
 }
 
 class _AuthViewState extends State<AuthView> {
-  bool _checkboxListTile = false;
+  bool isPersonal = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,10 +66,12 @@ class _AuthViewState extends State<AuthView> {
                       'Você é personal?',
                       style: TextStyle(color: AppColors.white),
                     ),
-                    value: _checkboxListTile,
+                    activeColor: AppColors.white,
+                    checkColor: AppColors.white,
+                    value: isPersonal,
                     onChanged: (value) {
                       setState(() {
-                        _checkboxListTile = !_checkboxListTile;
+                        isPersonal = !isPersonal;
                       });
                     },
                   ),
@@ -96,7 +98,8 @@ class _AuthViewState extends State<AuthView> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MainPagesView(),
+                          builder: (context) =>
+                              MainPagesView(isPersonal: isPersonal),
                         ),
                       );
                     },

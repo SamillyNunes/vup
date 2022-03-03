@@ -8,9 +8,15 @@ import 'package:vup/presentation/views/main_pages/main_pages_view.dart';
 import '../auth/widgets/input_text_form_field_widget.dart';
 import '../../core/app_colors.dart';
 
-class SignUpView extends StatelessWidget {
+class SignUpView extends StatefulWidget {
   const SignUpView({Key? key}) : super(key: key);
 
+  @override
+  State<SignUpView> createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
+  bool isPersonal = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +50,21 @@ class SignUpView extends StatelessWidget {
                     'Cadastro',
                     style: AppTextStyles.largeTitleStyle,
                   ),
+                  CheckboxListTile(
+                    controlAffinity: ListTileControlAffinity.leading,
+                    title: const Text(
+                      'Você é personal?',
+                      style: TextStyle(color: AppColors.white),
+                    ),
+                    activeColor: AppColors.white,
+                    checkColor: AppColors.white,
+                    value: isPersonal,
+                    onChanged: (value) {
+                      setState(() {
+                        isPersonal = !isPersonal;
+                      });
+                    },
+                  ),
                 ],
               ),
               Column(
@@ -70,7 +91,8 @@ class SignUpView extends StatelessWidget {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MainPagesView(),
+                          builder: (context) =>
+                              MainPagesView(isPersonal: isPersonal),
                         ),
                       );
                     },
