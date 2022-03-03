@@ -9,8 +9,12 @@ import 'bottom_menu_buttom.dart';
 
 class BottomMenu extends StatelessWidget {
   final MainPagesViewModel mainPagesViewModel;
-  const BottomMenu({Key? key, required this.mainPagesViewModel})
-      : super(key: key);
+  final bool isPersonal;
+  const BottomMenu({
+    Key? key,
+    required this.mainPagesViewModel,
+    this.isPersonal = false,
+  }) : super(key: key);
 
   void jumpToPage(int index) {
     mainPagesViewModel.pageIndex = index;
@@ -43,14 +47,18 @@ class BottomMenu extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   BottomMenuButton(
-                    name: "Clientes",
-                    icon: AppImages.groupIcon,
+                    name: isPersonal ? "Clientes" : "Exercícios",
+                    icon: isPersonal
+                        ? AppImages.groupIcon
+                        : AppImages.haltersIcon,
                     onTapped: () => jumpToPage(0),
                     isActive: index == 0,
                   ),
                   BottomMenuButton(
-                    name: "Exercícios",
-                    icon: AppImages.haltersIcon,
+                    name: isPersonal ? "Exercícios" : "Comunidade",
+                    icon: isPersonal
+                        ? AppImages.haltersIcon
+                        : AppImages.groupIcon,
                     onTapped: () => jumpToPage(1),
                     isActive: index == 1,
                   ),

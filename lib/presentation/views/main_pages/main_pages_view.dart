@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vup/presentation/shared/widgets/bottom_menu/bottom_menu.dart';
 import 'package:vup/presentation/shared/widgets/custom_app_bar.dart';
+import 'package:vup/presentation/views/community/community_view.dart';
 import 'package:vup/presentation/views/exercises/exercises_view.dart';
 import 'package:vup/presentation/views/home/home_view.dart';
+import 'package:vup/presentation/views/home_customer/home_customer_view.dart';
 import 'package:vup/presentation/views/payments/payments_view.dart';
+import 'package:vup/presentation/views/setting/setting_view.dart';
 
 import 'main_pages_view_model.dart';
 
@@ -26,15 +29,20 @@ class _MainPagesViewState extends State<MainPagesView> {
         onAddTapped: () {},
         context: context,
       ),
-      bottomNavigationBar: BottomMenu(mainPagesViewModel: mainPagesViewModel),
+      bottomNavigationBar: BottomMenu(
+        mainPagesViewModel: mainPagesViewModel,
+        isPersonal: widget.isPersonal,
+      ),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: mainPagesViewModel.pagesViewController,
         children: [
-          const HomeView(),
-          const ExercisesView(),
-          const PaymentsView(),
-          Container(color: Colors.yellow),
+          widget.isPersonal ? const HomeView() : const HomeCustomerView(),
+          widget.isPersonal ? const ExercisesView() : const CommunityView(),
+          widget.isPersonal
+              ? const PaymentsView()
+              : Container(color: Colors.red),
+          const SettingView(),
         ],
       ),
     );
