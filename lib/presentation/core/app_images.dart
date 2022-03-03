@@ -16,4 +16,8 @@ class AppImages {
   static const String settingsIcon = "assets/images/svg/settings.svg";
   static const String walletIcon = "assets/images/svg/wallet.svg";
   static const String checkIcon = "assets/images/svg/check2.svg";
+
+  // JPG Files
+  static const String logoCentauroJpg = "assets/images/jpg/logoCentauro.jpg";
+  static const String logoMaxJpg = "assets/images/jpg/logoMax.jpg";
 }

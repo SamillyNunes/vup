@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:vup/presentation/core/app_colors.dart';
+import 'package:vup/presentation/core/app_images.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
 import 'package:vup/presentation/views/customer_payment/widgets/monthly_payment_card.dart';
 import 'package:vup/presentation/views/pay_debt/pay_debt_view.dart';
@@ -84,12 +85,12 @@ class CustomerPaymentView extends StatelessWidget {
               children: [
                 const Divider(color: Colors.transparent),
                 Image.asset(
-                  'assets/images/jpg/logoMax.jpg',
+                  AppImages.logoMaxJpg,
                   height: 23.h,
                   width: 19.h,
                 ),
                 Image.asset(
-                  'assets/images/jpg/logoCentauro.jpg',
+                  AppImages.logoCentauroJpg,
                   height: 23.h,
                   width: 19.h,
                 ),
