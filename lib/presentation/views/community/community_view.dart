@@ -15,7 +15,7 @@ class CommunityView extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Comunidade",
+                "Aulas agendadas",
                 style: AppTextStyles.largeTitleStyle.copyWith(
                   color: AppColors.purpleMain,
                 ),
