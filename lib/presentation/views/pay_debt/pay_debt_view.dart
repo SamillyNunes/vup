@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:vup/presentation/core/app_colors.dart';
 import 'package:vup/presentation/core/app_text_styles.dart';
-import 'package:vup/presentation/shared/services/i_payment.dart';
-import 'package:vup/presentation/shared/services/payment_service.dart';
-import 'package:vup/presentation/shared/strategies/bank_slip_payment_strategy.dart';
-import 'package:vup/presentation/shared/strategies/pix_payment_strategy.dart';
-import 'package:vup/presentation/shared/value_objects/pix.dart';
+import 'package:vup/presentation/views/pay_debt/services/i_payment.dart';
 import 'package:vup/presentation/views/pay_debt/widgets/custom_appbar_pay_debt.dart';
+
+import 'services/payment_service.dart';
+import 'strategies/bank_slip_payment_strategy.dart';
+import 'strategies/pix_payment_strategy.dart';
+import 'value_objects/pix.dart';
 
 //import 'widgets/form_payment_card.dart';
 

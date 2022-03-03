@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vup/presentation/shared/widgets/bottom_menu/bottom_menu.dart';
 import 'package:vup/presentation/shared/widgets/custom_app_bar.dart';
 import 'package:vup/presentation/views/community/community_view.dart';
+import 'package:vup/presentation/views/customer_payment/customer_payment_view.dart';
 import 'package:vup/presentation/views/exercises/exercises_view.dart';
 import 'package:vup/presentation/views/home/home_view.dart';
 import 'package:vup/presentation/views/home_customer/home_customer_view.dart';
@@ -41,7 +42,7 @@ class _MainPagesViewState extends State<MainPagesView> {
           widget.isPersonal ? const ExercisesView() : const CommunityView(),
           widget.isPersonal
               ? const PaymentsView()
-              : Container(color: Colors.red),
+              : const CustomerPaymentView(),
           const SettingView(),
         ],
       ),

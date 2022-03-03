@@ -1,6 +1,5 @@
-// ignore_for_file: avoid_print
-import 'package:vup/presentation/shared/services/i_payment.dart';
-import 'package:vup/presentation/shared/value_objects/pix.dart';
+import 'package:vup/presentation/views/pay_debt/services/i_payment.dart';
+import 'package:vup/presentation/views/pay_debt/value_objects/pix.dart';
 
 class PIXPaymentStrategy implements IPayment {
   PIX? pix;
