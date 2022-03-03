@@ -3,7 +3,7 @@ import 'package:vup/presentation/views/schedule_class/models/scheduling_class_mo
 import 'sheduling_class.dart';
 import 'sheduling_class_result.dart';
 
-class SchedulingClassTeacher extends SchedulingClass {
+class SchedulingClassGym extends SchedulingClass {
   @override
   SchedulingClassResult? check(SchedulingClassModel schedulingClassModel,
       {Map<String, dynamic>? params}) {

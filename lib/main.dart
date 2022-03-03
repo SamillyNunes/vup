@@ -4,9 +4,9 @@ import 'package:vup/presentation/core/app_widget.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      builder: (context) => const AppWidget(),
-    ),
-    // const AppWidget(),
+    // DevicePreview(
+    //   builder: (context) => const AppWidget(),
+    // ),
+    const AppWidget(),
   );
 }

@@ -53,7 +53,7 @@ class CustomAppBar extends PreferredSize {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: onAddTapped,
                   icon: SvgPicture.asset(
                     AppImages.addIcon,
                     color: AppColors.white,

@@ -29,7 +29,9 @@ class _MainPagesViewState extends State<MainPagesView> {
       appBar: CustomAppBar(
         label: "16 de janeiro de 2022",
         onAddTapped: () {
-          if (widget.isPersonal) {
+          print("add tapped");
+          if (!widget.isPersonal) {
+            print("add tapped 2");
             Navigator.push(
               context,
               MaterialPageRoute(
